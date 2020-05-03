@@ -1,11 +1,13 @@
 import React from "react"
 
 const Post = ({ data, location }) => {
-  console.log("data", data)
+  if (data.wordpressPost == null) {
+    return null
+  }
   return (
     <>
       <div>{data.wordpressPost.title}</div>
-      <div dangerouslySetInnerHTML={{__html: data.wordpressPost.content}} />
+      <div dangerouslySetInnerHTML={{ __html: data.wordpressPost.content }} />
     </>
   )
 }
